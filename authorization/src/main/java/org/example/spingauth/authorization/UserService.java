@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -22,9 +23,9 @@ public class UserService {
         if (user == null) {
             throw new ApiException("账号或密码错误");
         }
-        return resourceRepository.findResourcesByUserId(user.getId()).stream().map(resource -> {
-            resource.getPath();
-        });
-        return null;
+        return resourceRepository.findResourcesByUserId(user.getId())
+                .stream()
+                .map(Resource::getPath)
+                .collect(Collectors.toSet());
     }
 }

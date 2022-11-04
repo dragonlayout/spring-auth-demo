@@ -1,3 +1,4 @@
+drop table if exists `user`;
 create table `user`
 (
     `id`       bigint unsigned auto_increment comment '用户 id',
@@ -8,6 +9,7 @@ create table `user`
   default charset = utf8mb4
   collate = utf8mb4_general_ci comment '用户表';
 
+drop table if exists `resource`;
 create table `resource`
 (
     `id` bigint unsigned auto_increment comment '资源 id',

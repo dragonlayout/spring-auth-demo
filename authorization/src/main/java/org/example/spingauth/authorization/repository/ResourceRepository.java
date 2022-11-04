@@ -7,4 +7,7 @@ import java.util.Set;
 
 public interface ResourceRepository extends JpaRepository<Resource, Long> {
     Set<Resource> findResourcesByUserId(Long userId);
+
+    void deleteByUserId(Long userId);
+
 }

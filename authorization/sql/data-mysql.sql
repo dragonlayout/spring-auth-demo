@@ -1,0 +1,24 @@
+INSERT INTO `user` VALUES (1, 'admin', 'admin');
+INSERT INTO `user` VALUES (2, 'root', 'root');
+INSERT INTO `user` VALUES (5, 'user1', 'user1');
+INSERT INTO `user` VALUES (6, 'user2', 'user2');
+INSERT INTO `user` VALUES (21, 'user3', 'user3');
+INSERT INTO `user` VALUES (22, 'user4', 'user4');
+INSERT INTO `user` VALUES (23, 'user5', 'user5');
+INSERT INTO `user` VALUES (24, 'user6', 'user6');
+INSERT INTO `user` VALUES (25, 'user7', 'user7');
+INSERT INTO `user` VALUES (26, 'user8', 'user8');
+INSERT INTO `user` VALUES (31, 'user9', 'user9');
+
+INSERT INTO `resource` VALUES (1, 1, '/user/account');
+INSERT INTO `resource` VALUES (2, 1, '/user/role');
+INSERT INTO `resource` VALUES (3, 1, '/data');
+INSERT INTO `resource` VALUES (4, 2, '/user/role');
+INSERT INTO `resource` VALUES (5, 2, '/data');
+# INSERT INTO `resource` VALUES (1001, 'POST:/API/user', '新增用户', 1);
+# INSERT INTO `resource` VALUES (1002, 'DELETE:/API/user', '删除用户', 1);
+# INSERT INTO `resource` VALUES (1003, 'PUT:/API/user', '编辑用户', 1);
+# INSERT INTO `resource` VALUES (1004, 'GET:/API/user/test/{id}', '用于演示路径参数', 1);
+# INSERT INTO `resource` VALUES (2001, 'POST:/API/role', '新增角色', 1);
+# INSERT INTO `resource` VALUES (2002, 'DELETE:/API/role', '删除角色', 1);
+# INSERT INTO `resource` VALUES (2003, 'PUT:/API/role', '编辑角色', 1);
