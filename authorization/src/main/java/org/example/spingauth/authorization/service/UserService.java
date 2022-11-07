@@ -26,20 +26,19 @@ public class UserService {
     @Autowired
     JPAQueryFactory queryFactory;
 
-    public List<String> login(UserParam userParam) {
+    public List<Long> login(UserParam userParam) {
         User user = userRepository.findUserByUsernameAndPassword(userParam.getUsername(),
                 userParam.getPassword());
         if (user == null) {
             throw new ApiException("账号或密码错误");
         }
-        QResource qResource = QResource.resource;
-        QUser qUser = QUser.user;
-        QUserResource qUserResource = QUserResource.userResource;
-
-        return queryFactory.select(qResource.path)
-                .from(qResource)
-                .leftJoin(qUserResource)
-                .on(qResource.id.eq(qUserResource.resourceId))
-                .where(qUserResource.userId.eq(user.getId())).fetch();
+        QUserRole qUserRole = QUserRole.userRole;
+        QRoleResource qRoleResource = QRoleResource.roleResource;
+        return queryFactory.select(qRoleResource.resourceId)
+                .from(qUserRole)
+                .join(qRoleResource)
+                .on(qUserRole.roleId.eq(qRoleResource.roleId))
+                .where(qUserRole.userId.eq(user.getId()))
+                .fetch();
     }
 }

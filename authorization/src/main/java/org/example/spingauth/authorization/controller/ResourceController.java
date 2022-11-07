@@ -16,6 +16,6 @@ public class ResourceController {
 
     @GetMapping("/resource/list")
     public List<Resource> getList() {
-        return resourceService.list();
+        return resourceService.resourceList();
     }
 }

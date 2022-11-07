@@ -29,7 +29,7 @@ public class LoginController {
     JPAQueryFactory queryFactory;
 
     @PostMapping("/login")
-    public List<String> login(@RequestBody UserParam user) {
+    public List<Long> login(@RequestBody UserParam user) {
         return userService.login(user);
     }
 
