@@ -1,4 +1,4 @@
-package org.example.spingauth.authorization.controller;
+package org.example.spingauth.authorization;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,5 +10,5 @@ import java.util.Set;
 public class UserMenuParam {
 
     private Long id;
-    private Set<String> menus;
+    private Set<Long> menus;
 }

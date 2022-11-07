@@ -1,4 +1,4 @@
-package org.example.spingauth.authorization;
+package org.example.spingauth.authorization.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -13,8 +13,7 @@ public class Resource {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user_id")
-    private Long userId;
-
     private String path;
+
+    private String name;
 }

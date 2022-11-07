@@ -1,13 +1,19 @@
 package org.example.spingauth.authorization.controller;
 
+import com.querydsl.core.QueryFactory;
+import com.querydsl.core.types.Projections;
+import com.querydsl.jpa.impl.JPAQueryFactory;
+import org.example.spingauth.authorization.UserMenuParam;
 import org.example.spingauth.authorization.UserParam;
-import org.example.spingauth.authorization.UserService;
+import org.example.spingauth.authorization.service.ResourceService;
+import org.example.spingauth.authorization.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -19,8 +25,11 @@ public class LoginController {
     @Autowired
     ResourceService resourceService;
 
+    @Autowired
+    JPAQueryFactory queryFactory;
+
     @PostMapping("/login")
-    public Set<String> login(@RequestBody UserParam user) {
+    public List<String> login(@RequestBody UserParam user) {
         return userService.login(user);
     }
 
